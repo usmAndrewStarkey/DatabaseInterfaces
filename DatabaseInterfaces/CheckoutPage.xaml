@@ -1,0 +1,48 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="DatabaseInterfaces.CheckoutPage">
+
+    <StackLayout Padding="20" Spacing="20">
+
+        <!--display the list of products in the cart-->
+        <Label Text="Your Cart"
+           FontSize="24"
+           HorizontalOptions="Center" />
+
+        <CollectionView x:Name="CartCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" BackgroundColor="Grey">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Text="{Binding ProductName}" />
+                        <Label Grid.Column="1" Text="{Binding Quantity}" HorizontalTextAlignment="Center" />
+                        <Label Grid.Column="2" Text="{Binding PriceAtPurchase, StringFormat='${0:F2}'}" HorizontalTextAlignment="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!--total amount label-->
+        <Label x:Name="TotalAmountLabel"
+           FontSize="20"
+           HorizontalOptions="Center" />
+
+        <!--button to confirm checkout-->
+        <Button Text="Confirm Purchase"
+            FontSize="20"
+            BackgroundColor="Green"
+            TextColor="White"
+            MaximumWidthRequest="200"
+            Clicked="OnConfirmPurchaseClicked" />
+        <Button Text="Shipment Page" FontSize="20"
+                BackgroundColor="Green"
+                TextColor="White"
+                MaximumWidthRequest="200"
+                Clicked="OnShipmentClicked" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,13 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="DatabaseInterfaces.ShipmentPage">
+
+    <StackLayout Padding="30" Spacing="20">
+        <Label Text="Record Shipment Arrival" FontSize="24" HorizontalOptions="Center" />
+
+        <Entry x:Name="UPCEntry" Placeholder="Enter Product UPC" MaximumWidthRequest="300"/>
+        <Entry x:Name="QuantityEntry" Placeholder="Enter Quantity" Keyboard="Numeric" MaximumWidthRequest="300"/>
+
+        <Button Text="Record Shipment" Clicked="OnRecordShipmentClicked" MaximumWidthRequest="200"/>
+    </StackLayout>
+</ContentPage>
